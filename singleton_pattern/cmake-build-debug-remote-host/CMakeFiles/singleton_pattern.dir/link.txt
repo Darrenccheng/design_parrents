@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/singleton_pattern.dir/main.cpp.o  -o singleton_pattern  -lpthread 

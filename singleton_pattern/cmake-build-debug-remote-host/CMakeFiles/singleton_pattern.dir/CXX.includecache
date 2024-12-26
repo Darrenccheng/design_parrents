@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/computer_Study/design_parrents/singleton_pattern/main.cpp
+iostream
+-
+mutex
+-
+atomic
+-
+queue
+-
+thread
+-
+chrono
+-
+
