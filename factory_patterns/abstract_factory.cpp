@@ -178,14 +178,15 @@ int main() {
     // 定义一个抽象工厂指针指向具体的工厂
     AbatractFactory* factory = new UltimateFactory;
     printInfo(factory->createShip());
+    delete factory;
 
     factory = new StandalFactory;
     printInfo(factory->createShip());
+    delete factory;
 
 
     factory = new BasicalFactory;
     printInfo(factory->createShip());
-
     delete factory;
 
     return 0;
