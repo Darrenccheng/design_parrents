@@ -169,14 +169,23 @@ public:
     }
 };
 
+void printInfo(Ship* ship) {
+    cout << ship->getShip() << endl << endl;
+    delete ship;
+}
+
 int main() {
     // 定义一个抽象工厂指针指向具体的工厂
     AbatractFactory* factory = new UltimateFactory;
-    // 定义一个船类
-    Ship* ship = factory->createShip();
-    cout << ship->getShip() << endl;
+    printInfo(factory->createShip());
 
-    delete ship;
+    factory = new StandalFactory;
+    printInfo(factory->createShip());
+
+
+    factory = new BasicalFactory;
+    printInfo(factory->createShip());
+
     delete factory;
 
     return 0;
