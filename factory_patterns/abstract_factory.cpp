@@ -85,7 +85,7 @@ public:
 // 枪
 class GunArm : public Arms {
 public:
-    string getArms() {
+    string getArms() override {
         return string("配备的武器是<枪>...");
     }
 };
@@ -93,7 +93,7 @@ public:
 // 速射炮
 class CannoArm : public Arms {
 public:
-    string getArms() {
+    string getArms() override {
         return string("配备的武器是<速射炮>...");
     }
 };
@@ -101,7 +101,7 @@ public:
 // 激光
 class LaserArm : public Arms {
 public:
-    string getArms() {
+    string getArms() override {
         return string("配备的武器是<激光>...");
     }
 };
