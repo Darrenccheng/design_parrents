@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named abstract_factory
+
+# Build rule for target.
+abstract_factory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 abstract_factory
+.PHONY : abstract_factory
+
+# fast build rule for target.
+abstract_factory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract_factory.dir/build.make CMakeFiles/abstract_factory.dir/build
+.PHONY : abstract_factory/fast
+
+#=============================================================================
 # Target rules for targets named factory
 
 # Build rule for target.
@@ -155,6 +168,33 @@ simple_factory: cmake_check_build_system
 simple_factory/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/build
 .PHONY : simple_factory/fast
+
+abstract_factory.o: abstract_factory.cpp.o
+
+.PHONY : abstract_factory.o
+
+# target to build an object file
+abstract_factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract_factory.dir/build.make CMakeFiles/abstract_factory.dir/abstract_factory.cpp.o
+.PHONY : abstract_factory.cpp.o
+
+abstract_factory.i: abstract_factory.cpp.i
+
+.PHONY : abstract_factory.i
+
+# target to preprocess a source file
+abstract_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract_factory.dir/build.make CMakeFiles/abstract_factory.dir/abstract_factory.cpp.i
+.PHONY : abstract_factory.cpp.i
+
+abstract_factory.s: abstract_factory.cpp.s
+
+.PHONY : abstract_factory.s
+
+# target to generate assembly for a file
+abstract_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract_factory.dir/build.make CMakeFiles/abstract_factory.dir/abstract_factory.cpp.s
+.PHONY : abstract_factory.cpp.s
 
 factory.o: factory.cpp.o
 
@@ -218,8 +258,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... abstract_factory"
 	@echo "... factory"
 	@echo "... simple_factory"
+	@echo "... abstract_factory.o"
+	@echo "... abstract_factory.i"
+	@echo "... abstract_factory.s"
 	@echo "... factory.o"
 	@echo "... factory.i"
 	@echo "... factory.s"
