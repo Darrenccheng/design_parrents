@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /home/computer_Study/design_parrents/factory_patterns/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake3 -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -97,6 +86,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake3 -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,44 +131,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named factory_patterns
+# Target rules for targets named factory
 
 # Build rule for target.
-factory_patterns: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 factory_patterns
-.PHONY : factory_patterns
+factory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 factory
+.PHONY : factory
 
 # fast build rule for target.
-factory_patterns/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/build
-.PHONY : factory_patterns/fast
+factory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/build
+.PHONY : factory/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named simple_factory
 
-.PHONY : main.o
+# Build rule for target.
+simple_factory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_factory
+.PHONY : simple_factory
+
+# fast build rule for target.
+simple_factory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/build
+.PHONY : simple_factory/fast
+
+factory.o: factory.cpp.o
+
+.PHONY : factory.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/main.cpp.o
-.PHONY : main.cpp.o
+factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/factory.cpp.o
+.PHONY : factory.cpp.o
 
-main.i: main.cpp.i
+factory.i: factory.cpp.i
 
-.PHONY : main.i
+.PHONY : factory.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/main.cpp.i
-.PHONY : main.cpp.i
+factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/factory.cpp.i
+.PHONY : factory.cpp.i
 
-main.s: main.cpp.s
+factory.s: factory.cpp.s
 
-.PHONY : main.s
+.PHONY : factory.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/main.cpp.s
-.PHONY : main.cpp.s
+factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/factory.cpp.s
+.PHONY : factory.cpp.s
+
+simple_factory.o: simple_factory.cpp.o
+
+.PHONY : simple_factory.o
+
+# target to build an object file
+simple_factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/simple_factory.cpp.o
+.PHONY : simple_factory.cpp.o
+
+simple_factory.i: simple_factory.cpp.i
+
+.PHONY : simple_factory.i
+
+# target to preprocess a source file
+simple_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/simple_factory.cpp.i
+.PHONY : simple_factory.cpp.i
+
+simple_factory.s: simple_factory.cpp.s
+
+.PHONY : simple_factory.s
+
+# target to generate assembly for a file
+simple_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/simple_factory.cpp.s
+.PHONY : simple_factory.cpp.s
 
 # Help Target
 help:
@@ -178,10 +218,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... factory_patterns"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... factory"
+	@echo "... simple_factory"
+	@echo "... factory.o"
+	@echo "... factory.i"
+	@echo "... factory.s"
+	@echo "... simple_factory.o"
+	@echo "... simple_factory.i"
+	@echo "... simple_factory.s"
 .PHONY : help
 
 

@@ -73,7 +73,8 @@ CMAKE_BINARY_DIR = /home/computer_Study/design_parrents/factory_patterns/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/factory_patterns.dir/all
+all: CMakeFiles/factory.dir/all
+all: CMakeFiles/simple_factory.dir/all
 
 .PHONY : all
 
@@ -83,36 +84,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/factory_patterns.dir/clean
+clean: CMakeFiles/factory.dir/clean
+clean: CMakeFiles/simple_factory.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/factory_patterns.dir
+# Target rules for target CMakeFiles/factory.dir
 
 # All Build rule for target.
-CMakeFiles/factory_patterns.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles --progress-num=1,2 "Built target factory_patterns"
-.PHONY : CMakeFiles/factory_patterns.dir/all
+CMakeFiles/factory.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles --progress-num=1,2 "Built target factory"
+.PHONY : CMakeFiles/factory.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/factory_patterns.dir/rule: cmake_check_build_system
+CMakeFiles/factory.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/factory_patterns.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/factory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles 0
-.PHONY : CMakeFiles/factory_patterns.dir/rule
+.PHONY : CMakeFiles/factory.dir/rule
 
 # Convenience name for target.
-factory_patterns: CMakeFiles/factory_patterns.dir/rule
+factory: CMakeFiles/factory.dir/rule
 
-.PHONY : factory_patterns
+.PHONY : factory
 
 # clean rule for target.
-CMakeFiles/factory_patterns.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory_patterns.dir/build.make CMakeFiles/factory_patterns.dir/clean
-.PHONY : CMakeFiles/factory_patterns.dir/clean
+CMakeFiles/factory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/factory.dir/build.make CMakeFiles/factory.dir/clean
+.PHONY : CMakeFiles/factory.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/simple_factory.dir
+
+# All Build rule for target.
+CMakeFiles/simple_factory.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles --progress-num=3,4 "Built target simple_factory"
+.PHONY : CMakeFiles/simple_factory.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simple_factory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/simple_factory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/computer_Study/design_parrents/factory_patterns/build/CMakeFiles 0
+.PHONY : CMakeFiles/simple_factory.dir/rule
+
+# Convenience name for target.
+simple_factory: CMakeFiles/simple_factory.dir/rule
+
+.PHONY : simple_factory
+
+# clean rule for target.
+CMakeFiles/simple_factory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_factory.dir/build.make CMakeFiles/simple_factory.dir/clean
+.PHONY : CMakeFiles/simple_factory.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
